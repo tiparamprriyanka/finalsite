@@ -1,0 +1,148 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: transparent;
+  padding: 20px 0;
+}
+
+.navbar.scrolled {
+  /* background: rgba(0, 0, 0, 0.95); */
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+} */
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .nav-logo {
+  transform: scale(1.05);
+}
+
+/* Smaller logo on mobile */
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 40px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-white);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-red);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-red);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-actions button {
+  margin-left: 20px;
+}
+
+.mobile-menu-icon {
+  display: none;
+  color: var(--text-white);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+    gap: 30px;
+    transition: left 0.4s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  /* .logo {
+    font-size: 40px;
+  } */
+
+  .nav-logo {
+  height: 60px;
+  width: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+}

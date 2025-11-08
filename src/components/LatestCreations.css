@@ -1,0 +1,276 @@
+/* .latest-creations {
+  background: var(--bg-black);
+}
+
+.instagram-feed-placeholder {
+  margin: 60px 0;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.instagram-item {
+  position: relative;
+  aspect-ratio: 9/16;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.instagram-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3);
+}
+
+.instagram-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instagram-item:hover .instagram-overlay {
+  opacity: 1;
+}
+
+.instagram-overlay svg {
+  color: var(--primary-red);
+}
+
+.instagram-button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.instagram-button-container button {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
+} */
+
+
+
+
+
+/* Page */
+.latest-creations-section {
+background: radial-gradient( #3B0C0D, #000000);
+  /* background-image: 
+    radial-gradient(circle at top, #1a0000, #000000),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 100px;
+  min-height: 100vh;
+  /* box-sizing: border-box; */
+}
+
+.latest-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 8px;
+  
+}
+
+.latest-subtitle {
+  color: #cbd5e1;
+  font-size: 15px;
+  margin-bottom: 34px;
+}
+
+/* Slider wrapper gives space for arrows overlapping the slides */
+.slider-wrap {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+/* Swiper main container */
+.latest-swiper {
+  width: 100%;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Each slide center alignment */
+.video-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video card styling */
+.video-item {
+  width: 100%;
+  max-width: 340px;
+  max-height: 520px;
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  border: 4px solid rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--card-bg);
+}
+
+/* Slight hover pop */
+.video-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------------------------
+   Navigation Arrows (custom look)
+--------------------------- */
+
+/* Common arrow container */
+.latest-swiper .swiper-button-next,
+.latest-swiper .swiper-button-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: rgba(50, 50, 50, 0.85);
+  border-radius: 8px;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 1 !important;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  color: #ffffff !important;
+}
+
+/* Remove Swiper's default SVG background image */
+.latest-swiper .swiper-button-next,
+.latest-swiper .swiper-button-prev {
+  background-image: none !important;
+}
+
+/* Place arrows slightly overlapping slides */
+.latest-swiper .swiper-button-prev {
+  left: 14px;
+}
+
+.latest-swiper .swiper-button-next {
+  right: 14px;
+}
+
+/* Use Swiper pseudo-element for the arrow glyph - WHITE by default */
+.latest-swiper .swiper-button-next::after,
+.latest-swiper .swiper-button-prev::after {
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Force override Swiper's default blue color */
+.latest-swiper .swiper-button-next,
+.latest-swiper .swiper-button-prev {
+  color: #ffffff !important;
+}
+
+/* Hover effect */
+.latest-swiper .swiper-button-next:hover,
+.latest-swiper .swiper-button-prev:hover {
+  background-color: rgba(70, 70, 70, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ---------------------------
+   Pagination (dots) - CENTERED for desktop
+--------------------------- */
+
+.latest-swiper .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  width: auto;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Dot (bullet) style */
+.latest-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.4;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 0 !important;
+}
+
+.latest-swiper .swiper-pagination-bullet-active {
+  transform: scale(1.2);
+  opacity: 1;
+  background: #fff;
+}
+
+/* ---------------------------
+   MOBILE: move dots OUTSIDE video (below the whole slider)
+--------------------------- */
+@media (max-width: 768px) {
+  .slider-wrap {
+    padding: 0 12px;
+  }
+
+  .latest-swiper .swiper-pagination {
+    position: static;
+    transform: none;
+    margin-top: 16px;
+    bottom: auto;
+  }
+
+  .video-item {
+    max-width: 320px;
+    border-radius: 12px;
+  }
+
+  .latest-swiper .swiper-button-prev {
+    left: 8px;
+  }
+
+  .latest-swiper .swiper-button-next {
+    right: 8px;
+  }
+}
